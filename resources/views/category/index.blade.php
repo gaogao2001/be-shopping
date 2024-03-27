@@ -1,6 +1,4 @@
-
 <!-- resources/views/child.blade.php -->
-
 @extends('layout.admin')
 
 @section('title' )
@@ -10,54 +8,43 @@
 
 @section('content')
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-       @include('partials.content-header',['name'=>'category','key'=>'List'])
-        <!-- /.content-header -->
-
-        <!-- Main content -->
+        @include('partials.content-header',['name'=>'category','key'=>'List'])
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
                         <a href="{{ route('categories.create') }}" class="btn btn-success float-lg-right m-2"> Add</a>
                     </div>
-                    <div class="col-md-12"><table class="table">
+                    <div class="col-md-12">
+                        <table class="table">
                             <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
+                                <th scope="col">Tên danh mục</th>
+                                <th scope="col">Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
+                            @foreach($categories as $category)
+                                <tr>
+                                    <th scope="row">{{ $category->id }}</th>
+                                    <td>{{ $category->name }}</td>
+                                    <td>
+                                        <a href="{{ route('categories.edit', ['id' => $category->id]) }}" class="btn btn-default">Edit</a>
+                                        <a href=""{{ route('categories.delete', ['id' => $category->id]) }}" class="btn btn-danger">Delete</a>
+                                    </td>
+                                </tr>
+
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
-
+                    <div class="col-md-12">
+                        {{$categories->links()}}
+                    </div>
                 </div>
-                <!-- /.row -->
-            </div><!-- /.container-fluid -->
+            </div>
         </div>
-        <!-- /.content -->
     </div>
 @endsection
 
