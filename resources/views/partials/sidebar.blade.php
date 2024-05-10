@@ -55,6 +55,56 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{route('product.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Sản phẩm
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('slider.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Slider
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('settings.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Settings
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{route('users.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                           Danh sách nhân viên
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('role.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Danh sách vai trò (Role)
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('permission.create')}}" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Tạo dưc liệu bảng permission
+                        </p>
+                    </a>
+                </li>
 
             </ul>
         </nav>

@@ -23,7 +23,7 @@
                                 <input  type="text"
                                         name="name"
                                         class="form-control"
-                                        placeholder="Nhập tên danh mục"
+                                        placeholder="Nhập tên menus"
                                 >
                             </div>
                             <div class="form-group">
