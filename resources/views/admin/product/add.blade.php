@@ -116,7 +116,7 @@
 @endsection
 @section('js' )
     <script src="{{asset('vendors/select2/select2.min.js')}}"></script>
-    <script src="https://cdn.tiny.cloud/1/c0wi91owheqj5xvveg7tdhzx5q3l5ylnapfvs8gqbvn749tl/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/eyjbsy0t6reza3r5pij2xxy32fey2prccz41iguk829qgewb/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
 
     <script src="{{asset('admins/product/add/add.js')}}"></script>
 

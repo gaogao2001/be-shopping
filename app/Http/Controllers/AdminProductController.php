@@ -90,10 +90,12 @@ class AdminProductController extends Controller
                 {
                     $tagInstance = $this->tag->firstOrCreate(['name' => $tagItem]);
                     $tagIds[] = $tagInstance->id;
-                    $product->tags()->attach($tagInstance);
+
                 }
+                $product->tags()->attach($tagInstance);
+//                $product->tags()->attach($tagIds);
             }
-//            $product->tags()->attach($tagIds);
+//
             DB::commit();
             return redirect()->route('product.index');
         } catch (\Exception $exception) {
@@ -148,7 +150,7 @@ class AdminProductController extends Controller
                 {
                     $tagInstance = $this->tag->firstOrCreate(['name' => $tagItem]);
                     $tagIds[] = $tagInstance->id;
-                    $product->tags()->attach($tagInstance);
+                    $product->tags()->sync($tagInstance);
                 }
             }
 //            $product->tags()->sync($tagIds);

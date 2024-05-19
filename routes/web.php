@@ -60,11 +60,12 @@ Route::prefix('/admin')->middleware('auth') ->group(function ()
         Route::get('/',[
             'as' => 'menus.index',
             'uses'=> 'App\Http\Controllers\MenuController@index',
-            'middleware'=>'can:menu-list'
+            'middleware'=>'can:Menu-list'
         ] );
         Route::get('/create',[
             'as' => 'menus.create',
-            'uses'=> 'App\Http\Controllers\MenuController@create'
+            'uses'=> 'App\Http\Controllers\MenuController@create',
+            'middleware'=>'can:Menu-add'
         ] );
 
         Route::post('/store',[
@@ -73,7 +74,8 @@ Route::prefix('/admin')->middleware('auth') ->group(function ()
         ] );
         Route::get('/edit/{id}',[
             'as' => 'menus.edit',
-            'uses'=> 'App\Http\Controllers\MenuController@edit'
+            'uses'=> 'App\Http\Controllers\MenuController@edit',
+            'middleware'=>'can:Menu-edit'
         ] );
 
         Route::post('/update/{id}',[
@@ -82,7 +84,8 @@ Route::prefix('/admin')->middleware('auth') ->group(function ()
         ] );
         Route::get('/delete/{id}',[
             'as' => 'menus.delete',
-            'uses'=> 'App\Http\Controllers\CategoryController@delete'
+            'uses'=> 'App\Http\Controllers\CategoryController@delete',
+            'middleware'=>'can:Menu-delete'
         ] );
 
     });
@@ -91,7 +94,7 @@ Route::prefix('/admin')->middleware('auth') ->group(function ()
         Route::get('/',[
             'as' => 'product.index',
             'uses'=> 'App\Http\Controllers\AdminProductController@index',
-            'middleware'=>'can:product-list'
+//            'middleware'=>'can:product-list'
         ] );
         Route::get('/create',[
             'as' => 'product.create',
@@ -103,7 +106,8 @@ Route::prefix('/admin')->middleware('auth') ->group(function ()
         ] );
         Route::get('/edit/{id}',[
             'as' => 'product.edit',
-            'uses'=> 'App\Http\Controllers\AdminProductController@edit'
+            'uses'=> 'App\Http\Controllers\AdminProductController@edit',
+//            'middleware'=>'can:product-edit,id'
         ] );
         Route::post('/update/{id}',[
             'as' => 'product.update',
@@ -121,11 +125,12 @@ Route::prefix('/admin')->middleware('auth') ->group(function ()
         Route::get('/',[
             'as' => 'slider.index',
             'uses'=> 'App\Http\Controllers\SliderAdminController@index',
-            'middleware'=>'can:slider-list'
+            'middleware'=>'can:Slider-list'
         ] );
         Route::get('/create',[
             'as' => 'slider.create',
-            'uses'=> 'App\Http\Controllers\SliderAdminController@create'
+            'uses'=> 'App\Http\Controllers\SliderAdminController@create',
+            'middleware'=>'can:Slider-add'
         ] );
         Route::post('/store',[
             'as' => 'slider.store',
@@ -133,7 +138,8 @@ Route::prefix('/admin')->middleware('auth') ->group(function ()
         ] );
         Route::get('/edit/{id}',[
             'as' => 'slider.edit',
-            'uses'=> 'App\Http\Controllers\SliderAdminController@edit'
+            'uses'=> 'App\Http\Controllers\SliderAdminController@edit',
+            'middleware'=>'can:Slider-edit'
         ] );
         Route::post('/update/{id}',[
             'as' => 'slider.update',
@@ -141,7 +147,8 @@ Route::prefix('/admin')->middleware('auth') ->group(function ()
         ] );
         Route::get('/delete/{id}',[
             'as' => 'slider.delete',
-            'uses'=> 'App\Http\Controllers\SliderAdminController@delete'
+            'uses'=> 'App\Http\Controllers\SliderAdminController@delete',
+            'middleware'=>'can:Slider-delete'
         ] );
 
 
